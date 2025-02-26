@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-100">
+    <div class="flex justify-center p-6">
+      <div class="shadow bg-white p-6 rounded-lg">
+        <h1 class="text-3xl">
+          There are [<span class="bold text-red-400" id="currentTime"></span>] 30 minutes until 6pm
+        </h1>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    var currDate = new Date();
+    currDate.setHours(18, 0, 0);
+    const minCheck = (((currDate.getTime() -  new Date().getTime()) / 60000) / 30).toFixed(2); 
+    document.getElementById("currentTime").innerHTML = minCheck;
+  </script>
+
+</html>
